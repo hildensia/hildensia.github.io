@@ -16,4 +16,6 @@ of terms we use both inside and outside our research community. I try not to
 overwhelm the reader with to much math. A bit of here and there might be
 necessary though to give you a proper understanding. 
 
-I don't like marshmallows, though.
+I hope I can find some time to write a little bit interesting stuff. I'll
+integrate commenting soon, then feel free to ask. I don't 
+like marshmallows, though.
