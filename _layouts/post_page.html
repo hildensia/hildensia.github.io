@@ -27,4 +27,12 @@ layout: default
 			</article>
 		</div>
 	</section>
+{% if page.comments %}
+	<section class="container">
+		<article class="post">
+{% include disqus.html %}
+		</article>
+  </section>
+{% endif %}
+
 </main>

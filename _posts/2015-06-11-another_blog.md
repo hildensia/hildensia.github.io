@@ -1,6 +1,7 @@
 ---
 layout: post_page
 title: Another blog...
+comments: true
 ---
 
 There are many blogs out there. On [WordPress](https://wordpress.com/activity/posting/) there are somewhat between 40 and 50 million posts per month. So,

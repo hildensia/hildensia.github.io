@@ -1963,6 +1963,9 @@ hr {
     font-size: 1.15em;
     color: gray; }
 
+.disqus {
+  width: 50em; }
+
 footer .container {
   color: #fff;
   padding: 2em 0;
