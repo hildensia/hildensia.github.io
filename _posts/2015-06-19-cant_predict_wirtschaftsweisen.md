@@ -67,7 +67,7 @@ wealth is reduced to that one dimensional number.
 
 As this number is now the superstar of economic key numbers I will test, how
 well the wise men do in predicting that number. If you are interested in the
-analysis I made, have a look at the [code](ipynbviewer).
+analysis I made, have a look at the [code](https://github.com/hildensia/hildensia.github.io/blob/master/data/cant_predict/Can't%20Predict%3F%20The%20Wirtschaftsweise.ipynb).
 
 First we have to understand what data we have. The gross domestic product is the
 sum of the value of all goods (read services plus things) produced within one
