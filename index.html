@@ -16,7 +16,11 @@ title: Mainpage
     		{% for post in paginator.posts %}
     		  <li>
     		    <a href="{{ post.url }}">
+								{% if post.subtitle %}
+								<h3>{{ post.title }} - {{ post.subtitle }}</h3>
+								{% else %}
     		        <h3>{{ post.title }}</h3>
+								{% endif %}
                 <time>{{ post.date | date: "%d %B %Y" }}</time>
                 <div>{{ post.content |truncatehtml | truncatewords: 30 }}</div>
     		    </a>
