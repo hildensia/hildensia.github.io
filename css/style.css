@@ -1911,6 +1911,8 @@ hr {
     line-height: 1.6em;
     font-size: 1.15em;
     color: #555; }
+  .entries img {
+    display: none; }
 
 .pages {
   list-style: none; }
@@ -1957,11 +1959,31 @@ hr {
     color: #3d9ae8; }
     .post h2 span {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  .post h3 {
+    font-family: 'Raleway';
+    font-weight: normal;
+    font-size: 3em;
+    padding: 0 0 0.2em;
+    letter-spacing: 0.05em;
+    color: #3d9ae8; }
+    .post h3 span {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   .post section {
     font-family: georgia,times,serif;
     line-height: 1.9em;
     font-size: 1.15em;
     color: gray; }
+  .post img {
+    float: none;
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px; }
+  .post iframe {
+    border: 0;
+    width: 100%; }
 
 .disqus {
   width: 50em; }
