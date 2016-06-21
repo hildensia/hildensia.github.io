@@ -1,80 +1,292 @@
----
-layout: default
-title: Mainpage
----
-<!-- Content
-    ================================================== -->
-  <div class="content">
-    <main class="container">
-    	<div class="row-fluid">
-    		<section class="content">
-					<h1>minds, <br/>machines and marshmallows</h1>
-          <div class="sub-title">another blog about ai and how to
-					safe the world.</div>
-    		</section>
-    		<ul class="entries">
-    		{% for post in paginator.posts %}
-    		  <li>
-    		    <a href="{{ post.url }}">
-								{% if post.subtitle %}
-								<h3>{{ post.title }} - {{ post.subtitle }}</h3>
-								{% else %}
-    		        <h3>{{ post.title }}</h3>
-								{% endif %}
-                <time>{{ post.date | date: "%d %B %Y" }}</time>
-                <div>{{ post.content |truncatehtml | truncatewords: 30 }}</div>
-    		    </a>
-    		  </li>
-    		{% endfor %}
-    		</ul>
-    	</div>
-      
-      <div id="post-pagination">
-        {% if paginator.previous_page %}
-        <p class="prev">
-          {% if paginator.previous_page == 1 %}
-          <a href="/">Previous</a>
-          {% else %}
-          <a href="/page{{paginator.previous_page}}"> Previous</a>
-          {% endif %}
-        </p>
-        {% else %}
-<!--         <p class="prev disabled">
-          <span>Previous</span>
-        </p> -->
-        {% endif %}
+<!DOCTYPE HTML>
+<!--
+	Astral 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Johannes Kulick, Machine Learning and Robotics Lab</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/noscript.css" />
+		</noscript>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
 
-        <ul class="pages">
-          <li class="page">
-            {% if paginator.page == 1 %}
-<!--             <span class="current-page">1</span> -->
-            {% else %}
-<!--             <a href="/">1</a> -->
-            {% endif %}
-          </li>
+		<!-- Wrapper-->
+			<div id="wrapper">
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#me" class="fa fa-home active"><span>Home</span></a>
+						<a href="#research" class="fa fa-flask"><span>Research</span></a>
+						<a href="#teaching" class="fa fa-edit"><span>Teaching</span></a>
+						<a href="#projects" class="fa fa-gear"><span>Projects</span></a>
+						<a href="#contact" class="fa fa-envelope"><span>Contact</span></a>
+						<a href="blog" class="fa fa-comment"><span>Blog</span></a>
+						<a href="http://www.github.com/hildensia" class="fa fa-github"><span>GitHub</span></a>
+					</nav>
 
-          {% for count in (2..paginator.total_pages) %}
-          <li class="page">
-            {% if count == paginator.page %}
-            <span class="current-page">{{count}}</span>
-            {% else %}
-            <a href="/page{{count}}">{{count}}</a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Me -->
+							<article id="me" class="panel">
+								<header>
+									<h1>Johannes Kulick</h1>
+									<span class="byline">Ph.D Student at <br \>
+										Machine Learning and Robotics Lab of <br \>
+										Uni Stuttgart</span>
+								</header>
+								<a href="#research" class="jumplink pic">
+									<span class="jumplink arrow fa fa-chevron-right"><span>My
+											Publications</span></span>
+									<img src="images/johannes.jpg" alt="" />
+								</a>
+							</article>
 
-        {% if paginator.next_page %}
-        <p class="next">
-          <a href="/page{{paginator.next_page}}">Next</a>
-        </p>
-        {% else %}
-<!--         <p class="next disabled">
-          <span>Next</span>
-        </p> -->
-        {% endif %}
-      </div>
+						<!-- Research --> 
+							<article id="research" class="panel">
+								<header>
+									<h2>Research and Publications</h2>
+								</header>
+								<img src="images/pr2.jpg" alt="Our PR2" style="float:left;
+								margin-top:16px; margin-right:18px" />
+								<p>
+								  My research interests touch especially the area of active
+								learning in the field of robotics. So I try to apply machine
+								learning techniques to the problem of autonomous robotics. This
+								includes especially -- but is not limited to -- Bayesian
+								techniques. In our <a href="../stefan/pages/tcr.html">curious
+									robot</a> project we experiment on autonomous exploration on
+								our PR2 robot and use our active learning insights directly on
+								real world problems. We are especially interested on degrees of
+								freedom in the world and how robot could explore them and their
+								structure to achieve task goals.
+								</p>
+								<p>Earlier I was involved in the RoboCup Soccer team <a
+									href="http://www.fumanoids.de/">Fumanoids</a>, where I wrote
+								my master's thesis about humanoid gait generation.</p>
+								<p>
+								I support the <a href="http://www.gew.de/Gemeinsame_Erklaerung_der_Initiative_Hochschule_fuer_den_Frieden_ja_zur_Zivilklausel.html">'Erkl&auml;rung
+								der Initative f&uuml;r Hochschulen f&uuml;r den Frieden'</a> (declaration of the
+								initiative for universities for peace) against research for
+								military purpose.</p>
+								
+<h3>Publications</h3>
+<h5>2015</h5>
+<ul>
+	<li>J. Kulick, R. Lieck, M. Toussaint: <em>The Advantage of Cross-Entropy over
+		Entropy in Iterative Information Gathering</em>,
+	arXiv e-pub: 1409.7552v2, 2015, <a href="http://arxiv.org/pdf/1409.7552v2">pdf</a>
+	</li>
+	<li>J. Kulick, S. Otte, M. Toussaint: <em>Robots Solving Serial
+		Means-Means-End Problems</em>, In Proc. of Combining AI Reasoning and
+	Cognitive Science with Robotics Workshop at Robotics: Science and Systems,
+	2015, <a href="pubs/kulick-rss15ws.pdf">pdf</a>
+	</li>
+	<li>J. Kulick, S. Otte, M. Toussaint: <em>Active Exploration of Joint
+		Dependency Structures</em>, In Proc. of the Int. Conf. on Robotics and
+	Automation (ICRA), 2015, <a href="pubs/kulick-icra15.pdf">pdf</a>, <a
+		href="icra2015">interactive poster</a>
+	</li>
+</ul>
+<h4>2014</h4>
+<ul>
+	<li>J. Kulick, R. Lieck, M. Toussaint: <em>Active Learning of Hyperparameters:
+		An Expected Cross Entropy Criterion for Active Model Selection</em>,
+	arXiv e-pub: 1409.7552v1, 2014, <a href="http://arxiv.org/pdf/1409.7552v1">pdf</a>
+	<li>S. Otte, J. Kulick, M. Toussaint, O. Brock: <em>Entropy Based Strategies for Physical Exploration 
+		of the Environment's Degrees of Freedom</em>,
+	In Proc. of the Int. Conf. on Intelligent Robots and Systems (IROS), 2014, <a
+		href="pubs/otte-iros14.pdf">pdf</a>
+	</li>
+</ul>
+<h4>2013</h4>
+<ul>
+  <li>J. Kulick, M. Toussaint, T. Lang, M. Lopes: <em>Active Learning for
+		Teaching a Robot Grounded Relational Symbols</em>, In Proc. of the Int.
+	Joint Conf. of Artificial Intelligence (IJCAI), 2013, <a
+		href="pubs/kulick-ijcai13.pdf">pdf</a></li>
+</ul>
+<h4>2012</h4>
+<ul>
+  <li>D. Seifert, S. Otte, J. Kulick, N. v. Schmude, L. Dohrmann, S. Heinrich, H. Moballegh, S. Mielke, L. Freitag, S. Hohberg, J. Auer, M. Losch, R. Rojas: <em>Berlin United – FUmanoids Team Description Paper 2012</em>, RoboCup 2012, <a href="pubs/fumanoids2012tdp.pdf">pdf</a></li>
+</ul>
+<h4>2011</h4>
+<ul>
+  <li> J. Kulick: <em>Ein stabiler Gang für humanoide, Fußball spielende Roboter</em>, Masters thesis, Freie Universität Berlin, 2011, German, <a href="pubs/kulick-masters-thesis-2011.pdf">pdf</a></li>
+  <li> D. Seifert, H. Moballegh, S. Heinrich, S. Oe, S. Mielke, N. von Schmude, T. Weißgerber, K. Würfel, R. Jonschkowski, J.Kulick, M. Fröhlich, J. Streckenbach, G. Lubitz, N. von Geyso, M. Schubert, Fu Yao, S. Puhlmann, O. Morillo, L. Freitag, R.Rojas: <em>FUmanoids Team Description Paper 2011</em>, RoboCup 2011, <a href="pubs/fumanoids2011tdp.pdf">pdf</a></li>
+</ul>
+<h4>2009</h4>
+<ul>
+  <li>J. Kulick, M. Block, R. Rojas: <em>General Game Playing mit Stochastischen Spielen</em>, Technical Report, Freie Universität Berlin, 2009, German, <a href="pubs/kulick-tr-b-09-08.pdf">pdf</a></li>
+  <li>J. Kulick: <em>World Description Language - A logical Language for agent-based Systems and Games</em>, Bachelor thesis, 2009, Freie Universität Berlin, <a href="pubs/kulick-bachelor-thesis-2009.pdf">pdf</a></li>
+</ul>
+								
+							</article>
 
-    </main>
-  </div>
+							<article id="teaching" class="panel">
+								<header>
+									<h2>Teaching and Open Thesis</h2>
+								<p>Right now there are no open thesis topics I offer. But if
+									you have an idea just write me an email. But note, that I
+									reside in Berlin most of the time, so supervision is only
+									possible via video calls or chat. </p>
+								</header>
+								<h3>Courses I Taught</h3>
+								<h3>2012/13</h3>
+								<a href="http://ipvs.informatik.uni-stuttgart.de/mlr/marc/teaching/12-Robotics/">Robotics</a>
+								<h3>2011/12</h3>
+								<a href="https://www.mi.fu-berlin.de/kvv/course.htm?cid=10238&sid=23&iid=1">Softwareprojekt: A novel type of robot porogramming infrastructure</a>
+							</article>
+						<!-- Projects --> 
+							<article id="projects" class="panel">
+								<header>
+									<h2>Projects</h2>
+								</header>
+								<p>
+								During my research I programed a few algorithms and put them to
+								libraries.
+								In my spare time I also program on some smaller projects. You can
+								find them here. For all the even smaller stuff check my GitHub
+								account.
+								</p>
+								<section class="is-gallery">
+									<div class="row half">
+										<div class="4u">
+											<!-- scikit.mcts -->
+											<a href="http://www.github.com/hildensia/mcts"
+												class="image image-full"><img src="images/monte_carlo.png"
+												alt="libsigpro"></a>
+											<p>Mont Carlo Tree Search (MCTS) is a state of the art
+											planning algorithm useful in many domains. I implemented
+											various versions of it as a <a href="https://scikits.appspot.com/">SciKit</a>
+											(basically a scientific python library).</p>
+											<p style="font-size: 0.6em;">Picture of Monte Carlo: Hampus Cullin, <a
+													href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC
+													BY-SA
+													3.0</a></p>
+										</div>
+										<div class="4u">
+											<!-- playalong -->
+											<a href="http://www.github.com/hildensia/playalong"
+												class="image image-full"><img src="images/playalong.png"
+												alt="playalong"></a>
+											  <p>A simple, yet useful music player for musicians. It
+											can set A-B-repeat very precisely. I'm also working on
+											integrating some signal processing to time stretch songs.
+											All this is for easily playing along your favorite music,
+											even if your skills don't match the artists ones yet.</p>
 
+										</div>
+										<div class="4u">
+											<!-- scholar.py -->
+											<a href="http://www.github.com/hildensia/scholar"
+												class="image image-full"><img src="images/scholar.jpg" alt="scholar"></a>
+											<p>I forked <a
+												href="http://www.icir.org/christian/scholar.html">
+												scholar.py</a>, a tool to use <a
+												href="http://scholar.google.com/">Google Scholar</a>
+											from the command line, and added some functionality
+											(direct BibTex, EndNote... download etc.)</p>
+
+										</div>
+									</div>
+									<div class="row half">
+										<div class="4u">
+											<!-- libsigpro -->
+											<a href="http://www.github.com/hildensia/libsigpro"
+												class="image image-full"><img src="images/libsigpro.png"
+												alt="libsigpro"></a>
+											<p>I moved the signal processing stuff of playalong to an 
+											own lib, because it a) might be useful for others and b) 
+											I have some other ideas for using it in other little
+											projects. So far it only consists of a STFT and a phase
+											vocoder.</p>
+										</div>
+										<div class="4u">
+											<!-- mailless.org -->
+											<a href="http://www.mailless.org/" class="image
+												image-full"><img src="images/mailless.png" alt="mailless"></a>
+											<p>mailless.org is the joint mail server of some friends
+											of mine and myself. This is basically an 'admin' project.
+											I don't really write software -- apart from scripts -- for
+											it.</p>
+										</div>
+										<div class="4u">
+											<!-- wxTableCtrl-->
+											<a href="http://www.sourceforge.net/projects/audacity-extra"
+												class="image image-full"><img
+												src="images/WxTableCtrl-puzzle.png"
+												alt="wxTableCtrl"></a>
+											  <p>In 2008, during my Bachelors, I was a participant of the Google Summer of
+												Code. I wrote some drag'n'drop widgets for <a
+													href="http://audacity.sourceforge.net/">Audacity</a>.</p>
+										</div>
+									</div>
+
+								</section>
+							</article>
+
+						<!-- Email -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>Contact</h2>
+								</header>
+													<p>I am a research assisstant and Ph.D candidate at
+													the <a
+														href="http://www.ipvs.uni-stuttgart.de/abteilungen/mlr">Machine
+														Learning and Robotics Lab</a> of <a
+														href="http://www.uni-stuttgart.de">University of
+														Stuttgart</a>. My supervisor is <a href="../marc">Marc Toussaint</a>.</p>
+          <p>
+          <h3>Berlin office:</h3>
+                                        c/o TU Berlin<br />
+					Marchstr. 23<br />
+					Room 5.002<br />
+					10587 Berlin<br />
+					Tel.: +49 (0) 30 - 314 25395<br />
+          </p>
+          <p>
+          <h3>Stuttgart Office:</h3>
+          Universitätsstr. 38<br />
+          70569 Stuttgart<br />
+          </p>
+          <p>
+          <h3>Email:</h3>
+					johannes.kulick [at] ipvs.uni-stuttgart.de<br />
+          <p>
+
+					You may consider contacting me encrypted. <a href="http://subkeys.pgp.net:11371/pks/lookup?op=vindex&search=0x189124D86111484E">my gpg key</a>.
+          </p>
+          <h3>Office Hours:</h3>
+					<p>
+					Normally you can just knock at my door (if it's not already open).
+					</p>
+							</article>
+
+					</div>
+		
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="links">
+							<li>Design : <a href="http://html5up.net/">HTML5 UP</a></li>
+						</ul>
+					</div>
+		
+			</div>
+
+	</body>
+</html>

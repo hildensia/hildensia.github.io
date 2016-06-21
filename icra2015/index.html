@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Active Exploration of Joint Dependency Structures</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+		</script>
+		<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<script src='js/popbox.js'></script>
+		<noscript>
+			<link rel="stylesheet" href="css/popbox.css" />
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="wrapper">
+
+			<!-- Header -->
+				<section id="header" class="skel-layers-fixed">
+					<header>
+						<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+						<h1 id="logo">Active Exploration of Joint Dependency Structure</h1>
+						<p>Johannes Kulick<br />Stefan Otte<br />Marc Toussaint</p>
+					</header>
+					<nav id="nav">
+						<ul>
+							<li><a href="#one" class="active">About</a></li>
+							<li><a href="#two">Joint Dependencies</a></li>
+							<li><a href="#three">Exploration</a></li>
+							<li><a href="#four">Experiments</a></li>
+						</ul>
+					</nav>
+					<footer>
+						<ul class="icons">
+							<li><a href="http://ipvs.informatik.uni-stuttgart.de/mlr/johannes" class="icon fa-home"><span class="label">Home</span></a></li>
+							<li><a
+									href="http://ipvs.informatik.uni-stuttgart.de/mlr/johannes/pubs/kulick-icra15.pdf"
+									class="icon fa-file-pdf-o"><span class="label">PDF of the
+										Paper</span></a></li>
+							<li><a href="http://github.com/hildensia/joint_dependency" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="http://www.autonomous-learning.org/" class="icon
+									fa-money"><span class="label">Autonomous Learning</span></a></li>
+							<li><a href="mailto:johannes.kulick@ipvs.uni-stuttgart.de" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</footer>
+				</section>
+
+			<!-- Main -->
+				<div id="main">
+
+					<!-- One -->
+						<section id="one">
+							<div class="container">
+								<header class="major">
+									<h2>Active Exploration of Joint Dependency Structures</h2>
+									<p>Johannes Kulick $\cdot$ Stefan Otte $\cdot$ Marc
+									Toussaint</p>
+									<p>Machine Learning and Robotics Lab $\cdot$ University of Stuttgart</p>
+									<p>International Conference on Robotics and Automation, 2015
+									$\cdot$ Seattle, Washington</p>
+								</header>
+								<p></p>
+							</div>
+						</section>
+
+					<!-- Two -->
+						<section id="two">
+							<div class="container">
+								<h3>Joint Dependencies</h3>
+								<p>
+									<div class="box alt">
+										<div class="row 50% uniform">
+											<div class="4u"><span class="image fit"><img
+													src="images/chair.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img
+													src="images/window.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img
+													src="images/door.jpg" alt="" /></span></div>
+										</div>
+									</div
+								</p>
+								<p>Joints are all around us in modern human-made
+								environments. We call them dependent joints if the position of one
+								joint changes the ability of another joint to move. E.g. the
+								position of the window handle determines whether one can open
+								the window or not. Robots need to be able to find out about these
+								dependencies and manipulate them.</p>
+
+								<p>A lot of these joints are provided with mechanical, audible, or other
+								clues to guide its usage. These changes in some sensible domain
+								robots should learn to use. How can we make robots perceive
+								these change points? </p>
+
+								<div class="features">
+									<article>
+										<img src="images/joint_angle.png" 
+										alt="The joint angle of the actuated joint" 
+										class="image"/>
+										<div class="inner">
+											<h4>Joint Movement</h4>
+											<p>When the robot moves a joint it records its position
+											in joint space. From this no clues are visible.</p>
+										</div>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/force.png"
+											alt="The exerted force to move the joint." /></a>
+										<div class="inner">
+											<h4>Force Sensor</h4>
+											<p>The PR2 has a force sensor at its wrist. We use it to
+											capture a force profile of the actuated joint. There are
+											many changes visible, but it is not clear, which are due
+											to the joint's feedback and which come from the control.</p>
+										</div>
+									</article>
+									<article>
+										<a href="#" class="image popper" data-popbox="pop1"><img
+											src="images/friction.png" alt="The virtual friction
+											constant" /></a>
+										<div id="pop1" class="popbox">
+												<h2>Dynamics Equations</h2>
+												<p>$\Delta v = \sqrt{v^2-c_f v \Delta t}$</p>
+												<table>
+													<thead>
+													<tr>
+														<th>Name</th>
+														<th>Description</th>
+													</tr>
+													</thead>
+													<tr>
+													<td>$v$</td><td>Velocity</td>
+													</tr><tr>
+													<td>$c_f$</td><td>Virtual friction constant</td>
+													</tr><tr>
+													<td>$\Delta t$</td><td>Time difference between two
+														steps</td>
+													</tr>
+													</tr>
+												</table>
+										</div>
+										<div class="inner">
+											<h4>Inverse Dynamics Equations</h4>
+											<p>Using a motion and dynamics model we can compute the
+											virtual friction constant for each time step. Here it is
+											very apparent where the change points in the temporal
+											development are.</p>
+										</div>
+									</article>
+									<article>
+										<img src="images/cps.png" alt="Change point probabilities" class="image"/></a>
+										<div class="inner">
+											<h4>Bayesian Change Point Detection</h4>
+											<p>The Bayesian change point detection we use agrees. The
+											probability for change points is clearly correlated with
+											the changes we anticipated.</p>
+										</div>
+									</article>
+								<div>
+
+								<!--<ul class="feature-icons">-->
+									<!--<li class="fa-code">Write all the code</li>-->
+									<!--<li class="fa-cubes">Stack small boxes</li>-->
+									<!--<li class="fa-book">Read books and stuff</li>-->
+									<!--<li class="fa-coffee">Drink much coffee</li>-->
+									<!--<li class="fa-bolt">Lightning bolt</li>-->
+									<!--<li class="fa-users">Shadow clone technique</li>-->
+								<!--</ul>-->
+							</div>
+						</section>
+
+					<!-- Three -->
+						<section id="three">
+
+							<div id="pop2" class="popbox"><h2>Symbol description</h2>
+											<table>
+												<tr><th>Symbol</th><th>Description</th><th>Domain</th></tr>
+												<tr><td>$N$           </td><td> Number of joints                       </td><td> $\mathbb{N}$ </td></tr>
+												<tr><td>$M^{j}$       </td><td> Maximum joint angle of joint $j$      </td><td> $\mathbb{R}$</td></tr>
+												<tr><td>$t, s, u, v$  </td><td> Index for time                               </td><td> $\mathbb{N}$</td></tr>
+												<tr><td>$j$           </td><td> Index for joints                             </td><td> $\{1, \dots, N\}$</td></tr>
+												<tr><td>$D^{j}$       </td><td> RV, dependency of joint $j$       </td><td> $\{1, \ldots, N+1\}$</td></tr>
+												<tr><td>$L^{j}_{t}$    </td><td> RV, locking state of joint $j$        </td><td> $\{0, 1\}$</td></tr>
+												<tr><td>$Q^{j}_{t}$    </td><td> RV, joint state/position of joint $j$ at time $t$ </td><td> $\mathbb{R}$</td></tr>
+												<tr><td>$F^{j}_{t}$ </td><td> RV, force/torque measurements of joint $j$ at time $t$     </td><td> $\mathbb{R}$</td></tr>
+												<tr><td>$C^{j}_{t}$ </td><td> RV, change points of joint $j$ at time $t$ </td><td> $\{0, 1\}$</td></tr>
+												<tr><td>$S^{j}_{p}$ </td><td> RV, segment borders of
+												joint $j$ at position $p$            </td><td> $\{0,
+												1\}$</td></tr>
+											</table>
+										</div>
+							<div class="container">
+								<h3>Exploration</h3>
+								<div class="features">
+									<article>
+										<a href="#" class="image popper" data-popbox="pop2"><img
+											src="images/graphical_model.png" alt="The graphical model
+											to capture the structure of joint dependencies" /></a>
+										<div class="inner">
+											<h4>Probabilistic Modeling</h4>
+											<p>We model the dependency structure with a graphical
+											model capturing our insights and prior knowledge about
+											how joints are used in human environments. Observing
+											the force signal or the position of the joints we can
+											infer various other things: How
+											likely is a joint locked? How likely are two joint
+											positions in the same segment? And most import how likely 
+											locks one joint another?</p>
+										</div>
+									</article>
+									<article>
+										<img src="images/exploration.png"
+											class="image" alt="Exploration is guided by the change
+											points" />
+										<div class="inner">
+											<h4>Active Exploration</h4>
+											<p>With the probabilistic model we can now use methods
+											from active learning and Bayesian experimental design to
+											choose points to explore optimally.<br/>
+											We want to choose points where our belief over the
+											dependency structure changes most. Thus we will quickly
+											converge to a correct belief over the dependency
+											structure of the involved joints. We use the MaxCE
+											method, that maximizes the expected cross entropy before
+											and after adding an observation:</p>
+										</div>
+									</article>
+									<p align="center">
+											$
+\DeclareMathOperator*{\argmax}{argmax}
+({Q^{1:N}_{t+1}}^*, j) =
+  \argmax\limits_{(Q^{1:N}_{t+1}, j)} \sum_{L^{j}_{t+1}}
+	\underbrace{P\left(L^{j}_{t+1}|Q^{1:N}_{t+1}, S^{1:N}\right)}_{\text{joint 
+	$j$ locked in the next state}}~\cdot
+	\underbrace{H\left[ P_{D^j_{t}};P_{D^j_{t+1}} \right]}_{\text{Cross entropy}}$</p>
+									<p>with</p>
+									<p align="center">
+									$P_{D^j_{t}}   = P(D^{j}|L^{j}_{1:t}, Q^{1:N}_{1:t},
+									S^{1:N})$<br/>
+									$P_{D^j_{t+1}} = P(D^{j}|L^{j}_{1:t+1}, Q^{1:N}_{1:t+1},
+									S^{1:N}).$</p>
+								</div>
+							</div>
+						</section>
+
+					<!-- Four -->
+						<section id="four">
+							<div class="container">
+								<h3>Experiments</h3>
+								<video width="100%" controls autoplay loop class="image">
+									<source src="video/experiment.mp4" type="video/mp4">
+								</video>
+								<p>We let our PR2 uncover the dependency between a key and the
+								drawer it locks. We did the same with a couple of furniture in
+								simulation.</p>
+								<img class="image left" src="images/results.png"><img />
+								<p>The results show that our method uncovers the dependency
+								quite quickly and better than all other tested methods. Our
+								intuition that change points in the environment help to find out
+								the structure was indeed correct. Even for simple dependencies
+								it took the robot much longer to uncover it without the help of
+								change points.</p>
+								<p>Also the uncertainty over the results is much lower with the
+								use of change points. The change points in fact almost distcretize the
+								space, such that much less observations are needed to cover the
+								whole space.</p>
+							</div>
+						</section>
+						<p align="center"> <img class="image"
+															src="images/pr2_drawer3.jpg"></img> </p>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<ul class="copyright">
+							<li>&copy; 2015 Johannes Kulick. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</section>
+
+		</div>
+	</body>
+</html>
